@@ -1248,6 +1248,7 @@ def index():
 
     
     elif request.method=='POST':
+        return "holis"
         data=request.files['filename']
         data.save('./Archivo de prueba.csv')
         df=pd.read_csv('./Archivo de prueba.csv')
