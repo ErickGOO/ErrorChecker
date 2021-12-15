@@ -1,4 +1,4 @@
-def errorchecker_campaign(entrada):
+'''def errorchecker_campaign(entrada):
     check = entrada.split('_')
     if len(check)==10:
         l={}
@@ -1254,6 +1254,18 @@ def index():
         aux.to_csv('./Archivo de prueba tratado.csv')
         return send_from_directory(directory='./', filename='Archivo de prueba tratado.csv')
 
+
+if __name__ =="__main__":
+	app.run('0.0.0.0',port=80,debug=True)'''
+
+from flask import Flask
+app = Flask(__name__)
+
+
+@app.route('/')
+
+def index():
+    return 'holis Esponjta'
 
 if __name__ =="__main__":
 	app.run('0.0.0.0',port=80,debug=True)
