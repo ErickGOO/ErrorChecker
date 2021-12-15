@@ -1243,7 +1243,18 @@ application = Flask(__name__,template_folder='./templates')
 @application.route('/')
 
 def index():
-    return render_template("form.html")
+    if request.method=='GET':
+        return render_template("form.html")
+
+    
+    elif request.method=='POST':
+        data=request.files['filename']
+        data.save('./Archivo de prueba.csv')
+        df=pd.read_csv('./Archivo de prueba.csv')
+        aux=error_checker(df)
+        aux.to_csv('./Archivo de prueba tratado.csv')
+        return send_from_directory(directory='./', filename='Archivo de prueba tratado.csv')
+
 
 if __name__ =="__main__":
 	application.run('0.0.0.0',port=80)
