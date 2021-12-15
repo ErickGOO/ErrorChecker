@@ -1237,17 +1237,14 @@ from flask import Flask, render_template,request,send_from_directory
 import os
 import pandas as pd
 
-app = Flask(__name__,template_folder='./templates')
+app = Flask(__name__)
 
 
 @app.route('/', methods = ['POST','GET'])
 
-def form():
+def index():
     if request.method=='GET':
-        try:
-            return 'render_template("form.html")'
-        except Exception as e:
-            print (e)
+        return 'render_template("form.html")'
     
     elif request.method=='POST':
         data=request.files['filename']
@@ -1259,4 +1256,4 @@ def form():
 
 
 if __name__ =="__main__":
-	app.run('0.0.0.0',port=(80))
+	app.run('0.0.0.0',port=80,debug=True)
