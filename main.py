@@ -1245,14 +1245,14 @@ app = Flask(__name__,template_folder='./templates')
 def form():
     if request.method=='GET':
         try:
-            return render_template("form.html")
+            return 'render_template("form.html")'
         except Exception as e:
             print (e)
     
     elif request.method=='POST':
         data=request.files['filename']
         data.save('./Archivo de prueba.csv')
-        df=pd.read_csv('.Archivo de prueba.csv')
+        df=pd.read_csv('./Archivo de prueba.csv')
         aux=error_checker(df)
         aux.to_csv('./Archivo de prueba tratado.csv')
         return send_from_directory(directory='./', filename='Archivo de prueba tratado.csv')
