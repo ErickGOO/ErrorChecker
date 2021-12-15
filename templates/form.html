@@ -6,30 +6,30 @@
 </head>
 
 
+<body>
+    <div class="container">
+        <link href="{{ url_for('static', filename='style_formulario2.css') }}" rel="stylesheet" type="text/css">
 
-<div class="container">
-    <link href="{{ url_for('static', filename='style_formulario2.css') }}" rel="stylesheet" type="text/css">
+        <form id="signup",method="post" enctype=multipart/form-data>
 
-    <form id="signup",method="post" enctype=multipart/form-data>
-
-        <div class="header">
-        
-            <h3>Error Checker Taxonomy tool</h3>
+            <div class="header">
             
-            <p>Upload Your Taxonomy File</p>
+                <h3>Error Checker Taxonomy tool</h3>
+                
+                <p>Upload Your Taxonomy File</p>
+                
+            </div>
             
-        </div>
-        
-        <div class="sep"></div>
+            <div class="sep"></div>
 
-        <div >
+            <div >
 
-            <input id="myFile" href="#" values="Send your file" type="file" name="filename" accept=".csv">        
-        </div>
-        
-        <input type="submit" values="Send your file"  />
+                <input id="myFile" href="#" values="Send your file" type="file" name="filename" accept=".csv">        
+            </div>
+            
+            <input type="submit" values="Send your file"  />
 
-    </form>
+        </form>
 
-</div>
-​
+    </div>
+</body>
