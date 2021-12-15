@@ -1237,10 +1237,10 @@ from flask import Flask, render_template,request,send_from_directory
 import os
 import pandas as pd
 
-app = Flask(__name__,template_folder='/home/egocv1/Formulario_esponja/templates')
+app = Flask(__name__,template_folder='./templates')
 
 
-@app.route('/form', methods = ['POST','GET'])
+@app.route('/', methods = ['POST','GET'])
 
 def form():
     if request.method=='GET':
@@ -1251,11 +1251,11 @@ def form():
     
     elif request.method=='POST':
         data=request.files['filename']
-        data.save('/home/egocv1/Formulario_esponja/Archivo de prueba.csv')
-        df=pd.read_csv('/home/egocv1/Formulario_esponja/Archivo de prueba.csv')
+        data.save('./Archivo de prueba.csv')
+        df=pd.read_csv('.Archivo de prueba.csv')
         aux=error_checker(df)
-        aux.to_csv('/home/egocv1/Formulario_esponja/Archivo de prueba tratado.csv')
-        return send_from_directory(directory='/home/egocv1/Formulario_esponja/', filename='Archivo de prueba tratado.csv')
+        aux.to_csv('./Archivo de prueba tratado.csv')
+        return send_from_directory(directory='./', filename='Archivo de prueba tratado.csv')
 
 
 if __name__ =="__main__":
