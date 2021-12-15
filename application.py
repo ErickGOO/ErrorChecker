@@ -1237,7 +1237,7 @@ from flask import Flask, render_template,request,send_from_directory
 import os
 import pandas as pd
 
-application = Flask(__name__,template_folder='./templates')
+application = Flask(__name__,template_folder='./templates',static_folder='./static')
 
 
 @application.route('/', methods = ['POST','GET'])
